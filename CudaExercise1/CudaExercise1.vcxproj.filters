@@ -30,6 +30,9 @@
     <CudaCompile Include="cuda_main5.cu">
       <Filter>소스 파일</Filter>
     </CudaCompile>
+    <CudaCompile Include="cuda_main5_1.cu">
+      <Filter>소스 파일</Filter>
+    </CudaCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="cuda_header.cuh">

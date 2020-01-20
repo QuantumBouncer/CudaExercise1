@@ -79,6 +79,10 @@ void PrintMatrix(vector<vector<int>> matrix) {
 
 // gpu
 
+__global__ vector<vector<int>> KernelMatrixMul(vector<vector<int>> matrix_A, vector<vector<int>> matrix_B) {
+
+}
+
 
 int main(void) {
 	// cpu
