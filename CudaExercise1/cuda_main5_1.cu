@@ -84,7 +84,7 @@ int main(void) {
 	// cpu
 	// 우선 cpu를 이용한 행렬 곱 연산에 대해 구현합니다.
 	// 시간이 얼마나 걸릴지 확인해봅시다.
-	int matrix_size = 800;
+	int matrix_size = 30;
 	int* matrix_A = new int[matrix_size * matrix_size];
 	int* matrix_B = new int[matrix_size * matrix_size];
 	int* matrix_C = new int[matrix_size * matrix_size];
@@ -95,6 +95,8 @@ int main(void) {
 	matrix_C = MatrixMul(matrix_A, matrix_B, matrix_size);
 	auto end_cpu = std::chrono::high_resolution_clock::now();
 	int result_cpu = (int)(end_cpu - start_cpu).count();
+	int* matrix_C_print = new int[matrix_size * matrix_size];
+	matrix_C_print = matrix_C;
 	//cout << " Matrix A" << endl;
 	//PrintMatrix(matrix_A, matrix_size);
 	//cout << " Matrix B" << endl;
@@ -121,6 +123,9 @@ int main(void) {
 	std::cout << result_cpu << "ns	" << result_gpu << "ns" << std::endl;
 	std::cout << std::endl;
 	std::cout << "gpu가 cpu보다 " << ((double)result_cpu / result_gpu) << "배 빠름" << std::endl;
+
+	PrintMatrix(matrix_C_print, matrix_size);
+	PrintMatrix(matrix_C, matrix_size);
 
 	system("pause");
 	return 0;
